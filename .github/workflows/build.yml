@@ -26,8 +26,11 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Setup Android SDK path
-        run: echo "sdk.dir=$ANDROID_SDK_ROOT" > android/local.properties
+     - name: Setup Android SDK path
+       run: |
+    cd android
+    echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+
 
       - name: Give gradlew permission
         run: chmod +x android/gradlew
